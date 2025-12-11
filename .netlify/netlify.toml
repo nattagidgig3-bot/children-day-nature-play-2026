@@ -1,0 +1,28 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/nattagid/Downloads/งานวันเด็ก/children-day-nature-play-main 2/dist"
+publishOrigin = "config"
+commandOrigin = "config"
+base = "/Users/nattagid/Downloads/งานวันเด็ก/children-day-nature-play-main 2"
+command = "npm run build"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
