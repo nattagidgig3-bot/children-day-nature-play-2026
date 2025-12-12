@@ -7,7 +7,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-sky-100 to-white">
+    <section className="relative min-h-[auto] md:min-h-screen py-12 md:py-0 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-sky-100 to-white">
       {/* Poster Image */}
       <div className="relative z-10 container mx-auto px-3 sm:px-4 pt-16 sm:pt-20 pb-4 sm:pb-8 flex justify-center">
         <img
