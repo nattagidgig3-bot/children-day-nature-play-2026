@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin, Youtube } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -182,6 +182,43 @@ const MissionSection = () => {
         <p className="text-center text-muted-foreground text-sm mt-4 md:hidden">
           เลื่อนเพื่อดูภาพเพิ่มเติม →
         </p>
+      </div>
+
+      {/* Location Section */}
+      <div className="container mx-auto mt-16 sm:mt-24">
+        <div className="bg-primary/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center max-w-4xl mx-auto">
+          <span className="inline-block text-primary font-medium mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wider">
+            สถานที่จัดงาน
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
+            เซฟติสท์ฟาร์ม (SAFETist Farm)
+          </h3>
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
+            ศูนย์เรียนรู้วิถีธรรมชาติและทักษะชีวิต ริมคลองบางมด
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://maps.app.goo.gl/Y2NUvYSbWjLGZB4m6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto btn-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-base font-medium"
+            >
+              <MapPin className="w-5 h-5" />
+              ดูแผนที่ (Google Maps)
+            </a>
+
+            <a
+              href="https://youtu.be/VrsHBprRwbg?si=KT_ZcuWCa54SqKUS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-base font-medium bg-red-600 hover:bg-red-700 text-white transition-colors"
+            >
+              <Youtube className="w-5 h-5" />
+              วิธีการเดินทาง (Video)
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Lightbox Dialog */}
