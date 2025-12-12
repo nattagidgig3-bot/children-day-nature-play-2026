@@ -29,11 +29,8 @@ const cards = [
 ];
 
 const WaysToGiveSection = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const openLineContact = () => {
+    window.open('https://lin.ee/UmzN9LL', '_blank');
   };
 
   return (
@@ -92,13 +89,13 @@ const WaysToGiveSection = () => {
 
               {/* CTA */}
               <button
-                onClick={() => scrollToSection('donate')}
+                onClick={openLineContact}
                 className={`mt-6 sm:mt-8 w-full py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${card.color === 'secondary'
                   ? 'bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground'
                   : 'bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground'
                   }`}
               >
-                ร่วมสนับสนุน
+                ร่วมสนับสนุน (LINE)
               </button>
             </div>
           ))}
