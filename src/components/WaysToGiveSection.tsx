@@ -1,5 +1,5 @@
 import { Package, Clock, Banknote, CheckCircle2 } from 'lucide-react';
-import infographicImg from '../assets/infographic-activities.jpeg';
+
 
 const cards = [
   {
@@ -40,13 +40,7 @@ const WaysToGiveSection = () => {
     <section id="ways-to-give" className="section-padding gradient-nature-bg">
       <div className="container mx-auto">
         {/* Infographic Image */}
-        <div className="flex justify-center mb-8 sm:mb-12 md:mb-16 px-3 sm:px-4">
-          <img
-            src={infographicImg}
-            alt="Infographic กิจกรรมวันเด็ก Survivor & Nature Play"
-            className="w-full max-w-3xl h-auto rounded-xl sm:rounded-2xl shadow-2xl"
-          />
-        </div>
+
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 px-2">
