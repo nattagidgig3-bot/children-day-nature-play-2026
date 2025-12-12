@@ -23,7 +23,7 @@ const HeroSection = () => {
           onClick={() => scrollToSection('donate')}
           className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-flex items-center gap-2 sm:gap-3 group w-full sm:w-auto justify-center"
         >
-          สนับสนุนโครงการ
+          สนับสนุนกิจกรรมวันเด็กแห่งชาติ 2026
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </button>
       </div>
