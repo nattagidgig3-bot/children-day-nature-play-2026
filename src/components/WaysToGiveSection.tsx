@@ -1,9 +1,13 @@
 import { Package, Clock, Banknote, CheckCircle2 } from 'lucide-react';
+import giveItemsImg from '../assets/give-items.jpg';
+import giveTimeImg from '../assets/give-time.jpg';
+import giveMoneyImg from '../assets/give-money.jpg';
 
 
 const cards = [
   {
     icon: Package,
+    image: giveItemsImg,
     title: 'สิ่งของ',
     subtitle: 'Give Items',
     description: 'บริจาคอุปกรณ์สำหรับกิจกรรมและการเรียนรู้ของเด็กๆ',
@@ -12,6 +16,7 @@ const cards = [
   },
   {
     icon: Clock,
+    image: giveTimeImg,
     title: 'เวลา / อาสา',
     subtitle: 'Give Time',
     description: 'ร่วมเป็นอาสาสมัครดูแลและนำกิจกรรมให้เด็กๆ',
@@ -20,6 +25,7 @@ const cards = [
   },
   {
     icon: Banknote,
+    image: giveMoneyImg,
     title: 'เงินทุน',
     subtitle: 'Give Money',
     description: 'สนับสนุนค่าอาหาร วัสดุการเรียนรู้ และค่าดำเนินกิจกรรม',
@@ -59,12 +65,13 @@ const WaysToGiveSection = () => {
               key={index}
               className="card-giving group p-4 sm:p-6"
             >
-              {/* Icon */}
-              <div
-                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 transition-transform duration-300 group-hover:scale-110 ${card.color === 'secondary' ? 'bg-secondary' : 'bg-primary'
-                  }`}
-              >
-                <card.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+              {/* Image instead of Icon */}
+              <div className="mb-6 rounded-xl overflow-hidden shadow-sm">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               {/* Title */}
