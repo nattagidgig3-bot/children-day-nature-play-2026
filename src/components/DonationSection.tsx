@@ -3,7 +3,7 @@ import { toast } from 'sonner';
 import qrCode from '@/assets/qr-donate.jpg';
 
 const DonationSection = () => {
-  const accountNumber = '05 9264 7984';
+  const accountNumber = '0592647984';
 
   const copyAccountNumber = () => {
     navigator.clipboard.writeText(accountNumber.replace(/-/g, ''));
