@@ -35,8 +35,15 @@ const cards = [
 ];
 
 const WaysToGiveSection = () => {
-  const openLineContact = () => {
-    window.open('https://lin.ee/UmzN9LL', '_blank');
+  const handleCardClick = (type: string) => {
+    if (type === 'Give Time') {
+      window.open('https://lin.ee/UmzN9LL', '_blank');
+    } else {
+      const element = document.getElementById('donate');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -96,13 +103,13 @@ const WaysToGiveSection = () => {
 
               {/* CTA */}
               <button
-                onClick={openLineContact}
+                onClick={() => handleCardClick(card.subtitle)}
                 className={`mt-6 sm:mt-8 w-full py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${card.color === 'secondary'
                   ? 'bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground'
                   : 'bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground'
                   }`}
               >
-                ร่วมสนับสนุน (LINE)
+                {card.subtitle === 'Give Time' ? 'ร่วมสนับสนุน (LINE)' : 'ร่วมสนับสนุน'}
               </button>
             </div>
           ))}
