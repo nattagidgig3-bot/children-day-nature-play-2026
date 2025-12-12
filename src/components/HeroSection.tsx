@@ -20,7 +20,7 @@ const HeroSection = () => {
       {/* CTA Button */}
       <div className="relative z-10 pb-8 sm:pb-16 px-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
         <button
-          onClick={() => scrollToSection('donate')}
+          onClick={() => scrollToSection('ways-to-give')}
           className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 inline-flex items-center gap-2 sm:gap-3 group w-full sm:w-auto justify-center"
         >
           สนับสนุนกิจกรรมวันเด็กแห่งชาติ 2026

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, ChevronLeft, ChevronRight, MapPin, Youtube } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, MapPin, Youtube, Facebook } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -43,6 +43,7 @@ import galleryRow2_11 from '@/assets/gallery-row2-11.jpg';
 import galleryRow2_12 from '@/assets/gallery-row2-12.jpg';
 import galleryRow2_13 from '@/assets/gallery-row2-13.jpg';
 import galleryRow2_14 from '@/assets/gallery-row2-14.jpg';
+import safetistFarmImg from '@/assets/safetist-farm.jpg';
 
 const allImagesRaw = [
   gallery1, gallery2, gallery3, gallery4, gallery5,
@@ -197,6 +198,15 @@ const MissionSection = () => {
             ศูนย์เรียนรู้วิถีธรรมชาติและทักษะชีวิต ริมคลองบางมด
           </p>
 
+          {/* Farm Image */}
+          <div className="mt-8 mb-6">
+            <img
+              src={safetistFarmImg}
+              alt="SAFETist Farm"
+              className="w-full max-w-2xl mx-auto h-auto rounded-xl shadow-lg"
+            />
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://maps.app.goo.gl/Y2NUvYSbWjLGZB4m6"
@@ -216,6 +226,16 @@ const MissionSection = () => {
             >
               <Youtube className="w-5 h-5" />
               วิธีการเดินทาง (Video)
+            </a>
+
+            <a
+              href="https://www.facebook.com/safetistfarm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-base font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+            >
+              <Facebook className="w-5 h-5" />
+              Facebook
             </a>
           </div>
         </div>
@@ -267,7 +287,7 @@ const MissionSection = () => {
           </div>
         </DialogContent>
       </Dialog>
-    </section>
+    </section >
   );
 };
 
