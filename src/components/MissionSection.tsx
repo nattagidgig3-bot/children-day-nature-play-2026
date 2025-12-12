@@ -44,20 +44,23 @@ import galleryRow2_12 from '@/assets/gallery-row2-12.jpg';
 import galleryRow2_13 from '@/assets/gallery-row2-13.jpg';
 import galleryRow2_14 from '@/assets/gallery-row2-14.jpg';
 
-const imagesRow1 = [
+const allImagesRaw = [
   gallery1, gallery2, gallery3, gallery4, gallery5,
   gallery6, gallery7, gallery8, gallery9, gallery10,
   gallery11, gallery12, gallery13, gallery14, gallery15,
   gallery16, gallery17, gallery18, gallery19, gallery20,
-];
-
-const imagesRow2 = [
   galleryRow2_1, galleryRow2_2, galleryRow2_3, galleryRow2_4, galleryRow2_5,
   galleryRow2_6, galleryRow2_7, galleryRow2_8, galleryRow2_9, galleryRow2_10,
   galleryRow2_11, galleryRow2_12, galleryRow2_13, galleryRow2_14,
 ];
 
-const allImages = [...imagesRow1, ...imagesRow2];
+// Calculate chunks for 3 rows (approx 11-12 images per row)
+const chunkSize = Math.ceil(allImagesRaw.length / 3);
+const imagesRow1 = allImagesRaw.slice(0, chunkSize);
+const imagesRow2 = allImagesRaw.slice(chunkSize, chunkSize * 2);
+const imagesRow3 = allImagesRaw.slice(chunkSize * 2);
+
+const allImages = allImagesRaw;
 
 const MissionSection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -149,6 +152,25 @@ const MissionSection = () => {
             {imagesRow2.map((image, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
                 <ImageCard image={image} index={imagesRow1.length + index} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6" />
+          <CarouselNext className="hidden md:flex -right-4 lg:-right-6" />
+        </Carousel>
+
+        {/* Third Row Carousel */}
+        <Carousel
+          opts={{
+            align: 'start',
+            loop: true,
+          }}
+          className="w-full mt-4"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {imagesRow3.map((image, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
+                <ImageCard image={image} index={imagesRow1.length + imagesRow2.length + index} />
               </CarouselItem>
             ))}
           </CarouselContent>
