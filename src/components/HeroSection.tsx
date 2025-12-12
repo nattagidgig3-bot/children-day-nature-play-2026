@@ -1,3 +1,5 @@
+import survivorSkillsImg from '@/assets/survivor-skills-optimized.jpg';
+
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -26,6 +28,16 @@ const HeroSection = () => {
           สนับสนุนกิจกรรมวันเด็กแห่งชาติ 2026
           <span className="group-hover:translate-x-1 transition-transform">→</span>
         </button>
+      </div>
+
+      {/* Survivor Skills Infographic */}
+      <div className="relative z-10 container mx-auto px-3 sm:px-4 pb-8 sm:pb-12">
+        <img
+          src={survivorSkillsImg}
+          alt="9 ฐานกิจกรรม Survivor Skills: ฝ่าวิกฤติด้วยวิถีธรรมชาติ"
+          className="w-full max-w-3xl mx-auto h-auto rounded-xl sm:rounded-2xl shadow-lg animate-fade-up"
+          style={{ animationDelay: '0.3s' }}
+        />
       </div>
     </section>
   );
