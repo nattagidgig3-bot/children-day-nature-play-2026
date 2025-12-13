@@ -1,8 +1,11 @@
-import { Copy, Heart, ExternalLink, Phone, Download } from 'lucide-react';
+import { Copy, Heart, ExternalLink, Phone, X } from 'lucide-react';
 import { toast } from 'sonner';
+import { useState } from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import qrCode from '@/assets/qr-donate.jpg';
 
 const DonationSection = () => {
+  const [showQR, setShowQR] = useState(false);
   const accountNumber = '0592647984';
 
   const copyAccountNumber = () => {
@@ -41,19 +44,21 @@ const DonationSection = () => {
           <div className="bank-box text-center p-4 sm:p-6 md:p-8">
             {/* QR Code */}
             <div className="mb-4 sm:mb-6">
-              <a href={qrCode} download="donation-qr-code.jpg" className="block relative group cursor-pointer">
+              <div
+                onClick={() => setShowQR(true)}
+                className="block relative group cursor-pointer"
+              >
                 <img
                   src={qrCode}
                   alt="QR Code สำหรับบริจาค"
                   className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 mx-auto rounded-xl shadow-md object-contain transition-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 flex justify-center translate-y-full pt-2 opacity-0 group-hover:opacity-100 transition-opacity sm:opacity-100">
-                  <span className="flex items-center gap-1 text-xs text-primary font-medium bg-white/80 px-2 py-1 rounded-full shadow-sm">
-                    <Download className="w-3 h-3" />
-                    กดเพื่อบันทึกรูป
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10 rounded-xl">
+                  <span className="text-white bg-primary/90 px-4 py-2 rounded-full text-sm font-medium">
+                    คลิกเพื่อดูภาพขนาดใหญ่
                   </span>
                 </div>
-              </a>
+              </div>
             </div>
 
             {/* Bank Info */}
@@ -132,6 +137,28 @@ const DonationSection = () => {
           </div>
         </div>
       </div>
+
+      {/* QR Code Dialog */}
+      <Dialog open={showQR} onOpenChange={setShowQR}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-2 sm:p-4 bg-background/95 backdrop-blur-sm border-none">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Close button */}
+            <button
+              onClick={() => setShowQR(false)}
+              className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-foreground/20 hover:bg-foreground/30 flex items-center justify-center transition-colors"
+            >
+              <X className="w-6 h-6 text-foreground" />
+            </button>
+
+            {/* QR Code Image */}
+            <img
+              src={qrCode}
+              alt="QR Code สำหรับบริจาค"
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
