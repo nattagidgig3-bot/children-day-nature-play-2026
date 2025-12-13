@@ -8,7 +8,7 @@ const cards = [
   {
     icon: Package,
     image: giveItemsImg,
-    title: 'สิ่งของ',
+    title: 'ให้สิ่งของ',
     subtitle: 'Give Items',
     description: 'บริจาคอุปกรณ์สำหรับกิจกรรมและการเรียนรู้ของเด็กๆ',
     items: ['เต็นท์ / เสื่อรองนอน', 'ชุดปฐมพยาบาล', 'เมล็ดพันธุ์พืช', 'อุปกรณ์เดินป่า'],
@@ -17,7 +17,7 @@ const cards = [
   {
     icon: Clock,
     image: giveTimeImg,
-    title: 'เวลา / อาสา',
+    title: 'ให้เวลาสมัครเป็นอาสา',
     subtitle: 'Give Time',
     description: 'ร่วมเป็นอาสาสมัครดูแลและนำกิจกรรมให้เด็กๆ',
     items: ['พี่เลี้ยงกิจกรรม', 'วิทยากรสอนทักษะ', 'ผู้ช่วยประสานงาน', 'ช่างภาพ / วิดีโอ'],
@@ -26,7 +26,7 @@ const cards = [
   {
     icon: Banknote,
     image: giveMoneyImg,
-    title: 'เงินทุน',
+    title: 'ให้เงินสนับสนุน',
     subtitle: 'Give Money',
     description: 'สนับสนุนค่าอาหาร วัสดุการเรียนรู้ และค่าดำเนินกิจกรรม',
     items: ['อาหารและเครื่องดื่ม', 'อุปกรณ์การเรียนรู้', 'ค่าเดินทาง', 'ของที่ระลึกเด็ก'],
@@ -36,7 +36,7 @@ const cards = [
 
 const WaysToGiveSection = () => {
   const handleCardClick = (type: string) => {
-    if (type === 'Give Time') {
+    if (type === 'Give Time' || type === 'Give Items') {
       window.open('https://lin.ee/UmzN9LL', '_blank');
     } else {
       const element = document.getElementById('donate');
@@ -109,7 +109,7 @@ const WaysToGiveSection = () => {
                   : 'bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground'
                   }`}
               >
-                {card.subtitle === 'Give Time' ? 'ร่วมสนับสนุน (LINE)' : 'ร่วมสนับสนุน'}
+                {card.subtitle === 'Give Time' || card.subtitle === 'Give Items' ? 'ร่วมสนับสนุน (LINE)' : 'ร่วมสนับสนุน'}
               </button>
             </div>
           ))}
